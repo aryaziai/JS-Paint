@@ -16,5 +16,4 @@ What can a user do?
 
 _For details on the languages and technologies used for the backend-server 
 
-Please visit the [JS-Paint-Backend-Repo](http://github.com/aryaziai/JS-Paint-Server)._
-_or checkout the live site at [JS-Paint](http://aryaziai.github.io/JS-Paint/)._
+Please visit the [JS-Paint-Backend-Repo](http://github.com/aryaziai/JS-Paint-Server) or checkout the live demo at [JS-Paint](http://aryaziai.github.io/JS-Paint/)
