@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>JS Paint</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <!-- <div class="mainnav">
+        <a href="#"><img src="https://i.imgur.com/6zNKw1U.png" width="218px"></a>
+        <div class="topnav">
+
+            <a class="active" href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+
+
+        </div>
+
+        <div class="rightnav">
+            <a href="#profile">My Account</a>
+        </div>
+    </div> -->
+
+
+
+
+
+    <center>
+        <img id="heart-gif" src="https://i.imgur.com/3vv590x.gif" style="display:block;"><br>
+        <div id="choice-container" style="display:block">
+            <button id="sign-in-button"> Login</button>
+            <!-- <h6>--</h6>  -->
+            <button id="sign-up-button">Create Account</button>
+        </div>
+        <div id="log-in-container" style="display:none;">
+            <form id="signIn">
+                <label id="username">Enter Username</label><br>
+                <input id="username-input" placeholder="Username"><br>
+                <br><input id="log-in-button" type="submit" value="Log In">
+            </form>
+            <h5 id="heyoH">Don't have an account?</h5><h5 id="additionalSignUp">Sign Up</h5>
+            
+        </div>
+        <div id="loader" class="loader" style="display:none"></div>
+        <div id="sign-up-container" style="display:none;">
+            <form id="create-user">
+                <label id="set-name">Name:</label><br>
+                <input id="user-name-value" placeholder="Name"><br><br>
+                <label id="create-username">Username:</label><br>
+                <input id="username-value" placeholder="Username"><br><br>
+                <input type="submit" value="Next">
+
+            </form>
+          
+        </div>
+
+        <div id="user-profile" style="display:none;">
+            <h1 id="profile-name"></h1>
+            <button id="new-drawing">New Paint</button>
+            <button id="edit-profile">Edit Profile</button>
+            <!-- <button id="log-out">Log Out</button> -->
+
+            <div id="user-drawings-container">
+
+            </div>
+        </div>
+
+        <div id="all-drawings" style="display:none">
+        <h1>Welcome To The Gallery</h1>
+        </div>
+
+        <div id="edit-user-profile" style="display:none">
+            <h1>Edit Profile</h1>
+            <h1 id="current-user-name"></h1>
+            <h1 id="current-username"></h1>
+            <form id ="update-username"
+            <label id="edit-username">New Username</label><br>
+            <input id="new-username-value"><br>
+            <input type="submit" value="update username"><br>
+            </form>
+            <br><br>
+            <button id="delete-account">Delete Account</button>
+        </div>
+    </center>
+
+        <audio controls id="music" loop="loop"><source src="songs/gorillaz.mp3" type="audio/mpeg"></audio>
+
+
+            
+
+
+
+
+        <div id="canvas" style="display:none">
+            
+            <div class="wheel" id="colorWheelDemo"></div>
+            <canvas id="draw"></canvas>
+
+
+            <div id="dropdown">
+                <h1>Coloring Book:</h1>
+                <select id="selectBar">
+                    <!-- <option value="free_draw">Free Draw</option>
+                    <option value="playground">Playground</option>
+                    <option value="wild_west">Wild West</option>
+                    <option value="psychedelic">Psychedelic</option>
+                    <option value="kangaroo">Kangaroo</option>
+                    <option value="firefly">Firefly</option>
+                    <option value="rockstar">Rockstar</option>
+                    <option value="dreams">Sweet Dreams</option>
+                    <option value="africa">Africa</option> -->
+                </select>
+                <div>
+                    <button id="saveButton">Save Drawing</button>
+                </div>
+               
+            </div>
+
+         
+
+        </div>
+
+
+
+    <!-- <script src="index.js" type="text/javascript"></script> -->
+    <!-- <script src="functions/canvadrawing.js" type="text/javascript"></script>
+<script src="functions/dropdownlisten.js" type="text/javascript"></script>
+<script src="functions/eraser.js" type="text/javascript"></script>
+<script src="functions/restart.js" type="text/javascript"></script>
+<script src="functions/sizeselector.js" type="text/javascript"></script>
+<script src="functions/typing.js" type="text/javascript"></script> -->
+  
+    
+<script src="functions/users.js"></script>
+<script src="functions/mainnav.js" type="text/javascript"></script>
+<script src="functions/wheelcreator.js" type="text/javascript"></script>
+<script src="index.js" type="text/javascript"></script>
+<script src="functions/canvadrawing.js" type="text/javascript"></script>
+<script src="functions/dropdownlisten.js" type="text/javascript"></script>
+<script src="functions/eraser.js" type="text/javascript"></script>
+<script src="functions/restart.js" type="text/javascript"></script>
+<script src="functions/sizeselector.js" type="text/javascript"></script>
+<script src="functions/typing.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+</body>
+
+</html>
