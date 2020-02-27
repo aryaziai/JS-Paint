@@ -6,7 +6,7 @@ let allUsers = [];
 
 let currentUserDrawings = [];
 
-const API_ROOT = "https://js-paint-server.herokuapp.com/";
+const API_ROOT = "https://js-paint-backend.herokuapp.com/";
 
 // set to toggle displayy blocks
 let createUserAccount = false;
