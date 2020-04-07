@@ -73,7 +73,7 @@ function wheelCreator() {
   
     musicButton.addEventListener("click", e => {
       var musicPlayer = document.getElementById("music");
-  
+
       if (musicButton.id === "musicOn") {
         musicButton.src = "https://i.imgur.com/8sH5Kj9.png";
         musicButton.setAttribute("id", "musicOff");

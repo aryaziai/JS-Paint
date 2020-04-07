@@ -121,6 +121,7 @@ function renderUserProfile(currentUser) {
     "edit-profile": editProfile,
     "log-out": logout,
     "new-drawing": loadCanvas,
+    "the-logo": loadCanvas,
   };
   addElementListeners(renderUserProfileEventListenerHandlers, "click");
 
@@ -294,6 +295,8 @@ function loadCanvas(event) {
 
   canvas.style.display = "block";
   document.getElementById("user-profile").style.display = "none";
+  document.querySelector("#edit-user-profile").style.display = "none";
+  document.querySelector("#all-drawings").style.display = "none";
   let button = document.getElementById("saveButton");
   if (button.getAttribute("clicked") === null) {
     button.addEventListener("click", (event) => saveDrawing(event));
