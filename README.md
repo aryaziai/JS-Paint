@@ -14,5 +14,6 @@ What can a user do?
 - HTML canvas element used in conjuction with JavaScript element-eventListeners to persist user-drawings to the database.
 - Synchronous and Asynchronous functions implemented to fetch user-data and manipulate the DOM.
 
-_For details on the languages and technologies used for the backend-server visit the [JS-Paint-Backend-Repo](http://github.com/dauncy/JS-Paint-Server)._
-_or checkout the live site at [JS-Paint](http://dauncy.github.io/js-paint-client/)._
+_For details on the languages and technologies used for the backend-server 
+
+Please visit the [JS-Paint-Backend-Repo](http://github.com/aryaziai/JS-Paint-Server) or checkout the live demo at [JS-Paint](http://aryaziai.github.io/JS-Paint/)
