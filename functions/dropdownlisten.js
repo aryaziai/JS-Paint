@@ -1,45 +1,48 @@
+
 function dropDownListen() {
-  let coloringBookArray = [];
+  let coloringBookArray = [ ]
   fetch(`${API_ROOT}challenges`)
-    .then(response => response.json())
-    .then(json => loadColoringBooks(json));
+  .then(response => response.json())
+  .then(json => loadColoringBooks(json))
 
-  function loadColoringBooks(json) {
-    json["data"].forEach(object => coloringBookArray.push(object));
-    let dropDown = document.getElementById("selectBar");
-
-    for (i = 0; i < coloringBookArray.length; i++) {
-      let option = document.createElement("option");
-      option.setAttribute("value", coloringBookArray[i].id);
-
-      option.text = coloringBookArray[i]["attributes"]["name"];
-
-      dropDown.appendChild(option);
-    }
-
-    dropDown.addEventListener("change", event => selectBook(event));
-    function selectBook(event) {
-      event.preventDefault();
-      let backgroundElement = document.getElementById("draw");
-      let currentSong = document.querySelector("#music");
-      for (i = 0; i < coloringBookArray.length; i++) {
-        if (event.target.value == coloringBookArray[i].id) {
-          backgroundElement.style.backgroundImage = `url(${coloringBookArray[i]["attributes"]["img_src"]})`;
-          currentSong.src = `${coloringBookArray[i]["attributes"]["song_src"]}`;
-        }
-        // if (musicButton.id === "musicOn") {
-        //   currentSong.play();
-        // }
-      }
-    }
+  function loadColoringBooks(json){
+    json["data"].forEach(object => coloringBookArray.push(object))
+    let dropDown = document.getElementById("selectBar")
+    
+     for(i = 0; i < coloringBookArray.length; i++){
+       
+      let option = document.createElement("option")
+      option.setAttribute("value", coloringBookArray[i].id) 
+      
+      option.text = coloringBookArray[i]["attributes"]["name"]
+      
+      dropDown.appendChild(option)
+      
   }
 
+  dropDown.addEventListener("change", event => selectBook(event))
+  function selectBook(event){
+    event.preventDefault()
+    let backgroundElement = document.getElementById("draw")
+    let currentSong = document.querySelector("#music")
+    for(i = 0; i < coloringBookArray.length; i++){
+      if(event.target.value == coloringBookArray[i].id){
+        backgroundElement.style.backgroundImage = `url(${coloringBookArray[i]["attributes"]["img_src"]})`
+        currentSong.src = `${coloringBookArray[i]["attributes"]["song_src"]}`
+      }
+    }
+    
+  }
+    
+  }
+  
   // const canvas = document.getElementById("draw");
   // const ctx = canvas.getContext("2d");
   // let musicButton = document.querySelector("#musicOn");
   // let drawMe = document.querySelector("#draw");
   // let dropDownThingy = document.getElementById("dropdown");
 
+  
   // dropDownThingy.addEventListener("change", event => {
   //   let colorBookSelection = event.target.value;
   //   let currentSong = document.querySelector("#music");

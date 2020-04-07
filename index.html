@@ -12,43 +12,61 @@
 
 <body>
 
+    <!-- <div class="mainnav">
+        <a href="#"><img src="https://i.imgur.com/6zNKw1U.png" width="218px"></a>
+        <div class="topnav">
+
+            <a class="active" href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+
+
+        </div>
+
+        <div class="rightnav">
+            <a href="#profile">My Account</a>
+        </div>
+    </div> -->
+
+
 
 
 
     <center>
         <img id="heart-gif" src="https://i.imgur.com/3vv590x.gif" style="display:block;"><br>
         <div id="choice-container" style="display:block">
-            <button id="sign-in-button"> Login</button>
-            <!-- <h6>--</h6>  -->
-            <button id="sign-up-button">Create Account</button>
+            <button id="sign-in-button"> Sign In</button>
+            <h6>--</h6> <button id="sign-up-button">Create Account</button>
         </div>
         <div id="log-in-container" style="display:none;">
             <form id="signIn">
                 <label id="username">Enter Username</label><br>
-                <input id="username-input" placeholder="Username"><br>
+                <input id="username-input" placeholder="type username here"><br>
                 <br><input id="log-in-button" type="submit" value="Log In">
             </form>
-            <h5 id="heyoH">Don't have an account?</h5><h5 id="additionalSignUp">Sign Up</h5>
+            <h5 id="heyoH">don't have an account?</h5><h5 id="additionalSignUp">Sign Up</h5>
             
         </div>
         <div id="loader" class="loader" style="display:none"></div>
         <div id="sign-up-container" style="display:none;">
             <form id="create-user">
-                <label id="set-name">Name:</label><br>
-                <input id="user-name-value" placeholder="Name"><br><br>
-                <label id="create-username">Username:</label><br>
-                <input id="username-value" placeholder="Username"><br><br>
-                <input type="submit" value="Next">
+                <label id="set-name">enter your name</label><br>
+                <input id="user-name-value" placeholder="name"><br>
+                <label id="create-username">enter a username</label><br>
+                <input id="username-value" placeholder="username"><br>
+                <input type="submit" value="create user">
 
             </form>
           
         </div>
 
         <div id="user-profile" style="display:none;">
+            <h1>Welcome</h1>
             <h1 id="profile-name"></h1>
             <button id="new-drawing">New Paint</button>
             <button id="edit-profile">Edit Profile</button>
-            <!-- <button id="log-out">Log Out</button> -->
+            <button id="log-out">Log Out</button>
 
             <div id="user-drawings-container">
 
@@ -62,13 +80,14 @@
         <div id="edit-user-profile" style="display:none">
             <h1>Edit Profile</h1>
             <h1 id="current-user-name"></h1>
+            <br>
             <h1 id="current-username"></h1>
             <form id ="update-username"
-            <label id="edit-username">New Username</label><br>
+            <label id="edit-username">enter a username</label><br>
             <input id="new-username-value"><br>
             <input type="submit" value="update username"><br>
             </form>
-            <br><br>
+            <br>
             <button id="delete-account">Delete Account</button>
         </div>
     </center>

@@ -15,18 +15,18 @@ let signIn = false;
 document.addEventListener("DOMContentLoaded", () => {
   const choiceForm = document.getElementById("choice-container");
   fetchAllUsers();
-  choiceForm.addEventListener("click", event => handleChoiceClick(event));
+  choiceForm.addEventListener("click", (event) => handleChoiceClick(event));
 });
 
 // make request to database to front-load all users
 function fetchAllUsers() {
   fetch(API_ROOT + "users")
-    .then(response => response.json())
-    .then(json => populateAllUsers(json));
+    .then((response) => response.json())
+    .then((json) => populateAllUsers(json));
 }
 
 function populateAllUsers(json) {
-  json.forEach(user => allUsers.push(user));
+  json.forEach((user) => allUsers.push(user));
 }
 
 function handleChoiceClick(event) {
@@ -43,7 +43,7 @@ function handleChoiceClick(event) {
 function signUserIn() {
   document
     .getElementById("additionalSignUp")
-    .addEventListener("click", event => {
+    .addEventListener("click", (event) => {
       createUserAccount = !createUserAccount;
       createUser(event);
     });
@@ -70,10 +70,11 @@ function signUserIn() {
     heart.style.display = "none";
   }
 
-  signInForm.addEventListener("submit", event => userSignIn(event));
+  signInForm.addEventListener("submit", (event) => userSignIn(event));
 }
 
 function userSignIn(event) {
+  document.getElementById("log-in-container").style.display = "none";
   document.getElementById("loader").style.display = "block";
 
   event.preventDefault();
@@ -81,8 +82,8 @@ function userSignIn(event) {
   let usernameValue = document.getElementById("username-input").value;
 
   fetch(`${API_ROOT}users/${usernameValue}`)
-    .then(response => response.json())
-    .then(json => authenticateUser(json));
+    .then((response) => response.json())
+    .then((json) => authenticateUser(json));
 }
 
 function authenticateUser(json) {
@@ -105,7 +106,7 @@ function renderUserProfile(currentUser) {
   document.getElementById("loader").style.display = "block";
   let login = document.getElementById("logoutButton");
   login.innerText = "Logout";
-  login.onclick = event => logout(event);
+  login.onclick = (event) => logout(event);
   if (createUserAccount) {
     document.getElementById("sign-up-container").style.display = "none";
   }
@@ -114,15 +115,12 @@ function renderUserProfile(currentUser) {
 
   renderDrawing(currentUserDrawings);
 
-  document.getElementById("log-in-container").style.display = "none";
   document.getElementById("user-profile").style.display = "block";
-  document.getElementById(
-    "profile-name"
-  ).innerText = `${currentUser.name}'s Profile`;
+  document.getElementById("profile-name").innerText = currentUser.name;
   const renderUserProfileEventListenerHandlers = {
     "edit-profile": editProfile,
     "log-out": logout,
-    "new-drawing": loadCanvas
+    "new-drawing": loadCanvas,
   };
   addElementListeners(renderUserProfileEventListenerHandlers, "click");
 
@@ -133,17 +131,16 @@ function renderDrawing(currentUserDrawings) {
   console.log(currentUserDrawings);
 
   const drawingDiv = document.getElementById("user-drawings-container");
-  currentUserDrawings.forEach(drawing => {
+  currentUserDrawings.forEach((drawing) => {
     console.log(drawing);
     let likes = drawing.likes.length;
-    let likeCounter = document.createElement("h5");
-    likeCounter.innerText = `${likes} Likes`;
+    let h5 = document.createElement("h5");
+    h5.innerText = `${likes} likes`;
     let deleteButton = document.createElement("button");
     let drawingCardDiv = document.createElement("div");
-    deleteButton.innerText = "X";
+    deleteButton.innerText = "Delete";
     deleteButton.setAttribute("id", `${drawing.id}`);
-    deleteButton.setAttribute("class", "deleteMe");
-    deleteButton.addEventListener("click", event => deleteDrawing(event));
+    deleteButton.addEventListener("click", (event) => deleteDrawing(event));
     let backgroundImg = drawing.challenge.img_src;
     let drawingCard = document.createElement("CANVAS");
     drawingCard.setAttribute("class", "drawing-card");
@@ -153,23 +150,23 @@ function renderDrawing(currentUserDrawings) {
     drawingCard.height = 873;
     let ctx = drawingCard.getContext("2d");
     let img = new Image();
-    img.onload = function() {
+    img.onload = function () {
       ctx.drawImage(img, 0, 0);
     };
     img.src = drawing.canvas_url;
     drawingCard.append(img);
     drawingCardDiv.append(drawingCard);
-    drawingCardDiv.prepend(deleteButton);
-    drawingCardDiv.append(likeCounter);
+    drawingCardDiv.append(deleteButton);
+    drawingCardDiv.append(h5);
     drawingDiv.append(drawingCardDiv);
   });
 }
 
 function addElementListeners(object, eventType) {
-  Object.keys(object).forEach(key => {
+  Object.keys(object).forEach((key) => {
     document
       .getElementById(key)
-      .addEventListener(eventType, event => object[key](event));
+      .addEventListener(eventType, (event) => object[key](event));
   });
 }
 
@@ -188,7 +185,7 @@ function createUser() {
     heyoh.style.display = "none";
     document.getElementById("additionalSignUp").style.display = "none";
   }
-  postUserForm.addEventListener("submit", event => verifyUser(event));
+  postUserForm.addEventListener("submit", (event) => verifyUser(event));
 }
 
 function verifyUser(event) {
@@ -200,7 +197,7 @@ function verifyUser(event) {
     document.getElementById("user-name-value").value = "";
     document.getElementById("username-value").value = "";
   } else if (
-    allUsers.filter(user => user.username == usernameInput).length > 0
+    allUsers.filter((user) => user.username == usernameInput).length > 0
   ) {
     alert("This username has already been taken");
     document.getElementById("user-name-value").value = "";
@@ -210,19 +207,20 @@ function verifyUser(event) {
   }
 }
 function postUser(usernameInput, userNameInput) {
+  document.getElementById("sign-up-container").style.display = "none";
   fetch(`${API_ROOT}users`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json"
+      Accept: "application/json",
     },
     body: JSON.stringify({
       name: userNameInput,
-      username: usernameInput
-    })
+      username: usernameInput,
+    }),
   })
-    .then(response => response.json())
-    .then(json => {
+    .then((response) => response.json())
+    .then((json) => {
       currentUser = json;
 
       renderUserProfile(currentUser);
@@ -234,17 +232,17 @@ function editProfile(event) {
   document.getElementById("edit-user-profile").style.display = "block";
   document.getElementById("user-profile").style.display = "none";
   let deleteAccount = document.getElementById("delete-account");
-  deleteAccount.addEventListener("click", event => deleteUser(event));
+  deleteAccount.addEventListener("click", (event) => deleteUser(event));
   let update = document.getElementById("update-username");
-  update.addEventListener("submit", event => updateUsername(event));
+  update.addEventListener("submit", (event) => updateUsername(event));
 }
 function deleteUser(event) {
   event.preventDefault();
   fetch(`${API_ROOT}users/${currentUser.username}`, {
-    method: "DELETE"
+    method: "DELETE",
   })
-    .then(response => response.json())
-    .then(json => {
+    .then((response) => response.json())
+    .then((json) => {
       console.log(json);
       window.location.reload();
     });
@@ -255,19 +253,21 @@ function updateUsername(event) {
   let newUsername = document.getElementById("new-username-value").value;
   if (newUsername == "") {
     alert("please enter a username");
-  } else if (allUsers.filter(user => user.username == newUsername).length > 0) {
+  } else if (
+    allUsers.filter((user) => user.username == newUsername).length > 0
+  ) {
     alert("This username has already been taken");
   } else {
     fetch(`${API_ROOT}users/${currentUser.username}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json",
       },
-      body: JSON.stringify({ username: newUsername, name: currentUser.name })
+      body: JSON.stringify({ username: newUsername, name: currentUser.name }),
     })
-      .then(response => response.json())
-      .then(json => {
+      .then((response) => response.json())
+      .then((json) => {
         currentUser = null;
 
         currentUser = json;
@@ -296,7 +296,7 @@ function loadCanvas(event) {
   document.getElementById("user-profile").style.display = "none";
   let button = document.getElementById("saveButton");
   if (button.getAttribute("clicked") === null) {
-    button.addEventListener("click", event => saveDrawing(event));
+    button.addEventListener("click", (event) => saveDrawing(event));
   }
 }
 
@@ -314,16 +314,16 @@ function saveDrawing(event) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json"
+      Accept: "application/json",
     },
     body: JSON.stringify({
       user_id: currentUser.id,
       challenge_id: selectBar.value,
-      canvas_url: dataURL
-    })
+      canvas_url: dataURL,
+    }),
   })
-    .then(response => response.json())
-    .then(json => {
+    .then((response) => response.json())
+    .then((json) => {
       newDrawing = json;
 
       saveDrawingToUser(newDrawing);
@@ -347,10 +347,10 @@ function deleteDrawing(event) {
 
   const drawingId = event.target.id;
   fetch(`${API_ROOT}drawings/${drawingId}`, {
-    method: "DELETE"
-  }).then(response => console.log(response));
+    method: "DELETE",
+  }).then((response) => console.log(response));
   let drawing = currentUserDrawings.findIndex(
-    drawing => drawing.id == drawingId
+    (drawing) => drawing.id == drawingId
   );
   currentUserDrawings.splice(drawing);
   document.getElementById("user-drawings-container").innerHTML = "";
