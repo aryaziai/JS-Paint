@@ -40,7 +40,9 @@ let profile = document.querySelector(
   "body > div.mainnav > div.topnav > a.active"
 );
 profile.addEventListener("click", (event) => loadProfile(event));
+
 function loadProfile(event) {
+  document.querySelector("#music").pause();
   event.preventDefault();
   if (currentUser == null) {
     console.log("not authorized");

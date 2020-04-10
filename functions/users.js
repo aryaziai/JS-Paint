@@ -331,6 +331,7 @@ function saveDrawing(event) {
 
       saveDrawingToUser(newDrawing);
     });
+  document.querySelector("#music").pause();
 }
 
 function saveDrawingToUser(newDrawing) {
