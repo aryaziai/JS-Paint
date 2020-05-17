@@ -83,6 +83,18 @@
 }
 #myNumber.form-control.input-number {
   width: 51px;
+  display: block;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 0.5px solid #ddd;
+  border-radius: 6px;
+  border-left: 1.5px solid #ddd;
+  border-right: 1.5px solid #ddd;
 }
 
 body {
@@ -335,10 +347,11 @@ label {
 }
 
 .drawing-card {
-  border: 2px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 10px;
   background: #fff;
   display: block;
+  margin-top: 50px;
 }
 
 #profile-name {
