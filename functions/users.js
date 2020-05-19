@@ -297,6 +297,11 @@ function loadCanvas(event) {
   document.getElementById("user-profile").style.display = "none";
   document.querySelector("#edit-user-profile").style.display = "none";
   document.querySelector("#all-drawings").style.display = "none";
+
+  if (document.querySelector("#musicOn")) {
+    document.getElementById("music").play();
+  }
+
   let button = document.getElementById("saveButton");
   if (button.getAttribute("clicked") === null) {
     button.addEventListener("click", (event) => saveDrawing(event));

@@ -1,3 +1,11 @@
+#musicOn,
+#musicOff,
+#eraser,
+#typing,
+#restart {
+  cursor: pointer;
+}
+
 #fakeButton {
   width: 300px;
   height: 300px;
@@ -326,7 +334,7 @@ label {
 .mainnav {
   display: flex;
   margin-bottom: 27px;
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid #eee;
   background: #fff;
   /* box-shadow: 0 1px 0 rgba(12, 13, 14, 0.1), 0 1px 6px rgba(60, 65, 70, 0.1); */
 }
