@@ -1,12 +1,10 @@
-// function canvaDrawing() { 
-    
+// function canvaDrawing() {
 
 //     const canvas = document.getElementById("draw");
 //     let isDrawing = false;
 //     const ctx = canvas.getContext("2d");
 //     canvas.width = 768;
 //     canvas.height = 873;
-    
 
 //     ctx.lineWidth= document.querySelector("#myNumber").value;
 
@@ -40,7 +38,6 @@
 
 // }
 
-
 const canvas = document.getElementById("draw");
 let isDrawing = false;
 const ctx = canvas.getContext("2d");
@@ -52,22 +49,20 @@ let lastY = 0;
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
 
-
 function canvaDrawing() {
-
-ctx.lineWidth = document.querySelector("#myNumber").value;
-
-let numberPicker = document.querySelector("#numberPicker");
-numberPicker.addEventListener("click", () => {
   ctx.lineWidth = document.querySelector("#myNumber").value;
-  ctx.lineJoin = "round";
-  ctx.lineCap = "round";
-});
 
-canvas.addEventListener("mousedown", drawingMouseDown)
-canvas.addEventListener("mousemove", drawinngMouseMove)
-canvas.addEventListener("mouseup", drawingMouseUpAndOut)
-canvas.addEventListener("mouseout", drawingMouseUpAndOut)
+  let numberPicker = document.querySelector("#numberPicker");
+  numberPicker.addEventListener("click", () => {
+    ctx.lineWidth = document.querySelector("#myNumber").value;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "round";
+  });
+
+  canvas.addEventListener("mousedown", drawingMouseDown);
+  canvas.addEventListener("mousemove", drawinngMouseMove);
+  canvas.addEventListener("mouseup", drawingMouseUpAndOut);
+  canvas.addEventListener("mouseout", drawingMouseUpAndOut);
 }
 
 // callback functions:
@@ -80,9 +75,8 @@ function drawinngMouseMove(e) {
   ctx.stroke();
   [lastX, lastY] = [e.offsetX, e.offsetY];
   ctx.globalCompositeOperation = "source-over"; // important
-  console.log("drawing is active!")
+  // console.log("drawing is active!")
 }
-
 
 function drawingMouseDown(e) {
   isDrawing = true;
@@ -93,5 +87,3 @@ function drawingMouseDown(e) {
 function drawingMouseUpAndOut(e) {
   isDrawing = false;
 }
-
-

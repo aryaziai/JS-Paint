@@ -92,6 +92,12 @@
     border-left: 2px solid #ccc; */
 }
 
+input {
+  line-height: normal;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
 #saveButton {
   margin-top: 20px;
   padding-top: 15px;
@@ -173,8 +179,9 @@ select {
   width: 200px;
   height: 48px;
   font-size: 18px;
-  border: 2px solid #75c0d8;
+  border: 2px solid #ddd;
   background: #fff;
+  padding: 5px;
 }
 
 #blue {

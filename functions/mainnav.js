@@ -63,6 +63,7 @@ function loadGallery(event) {
   if (currentUser == null) {
     console.log("not authorized");
   } else {
+    document.querySelector("#music").pause();
     document.getElementById("edit-user-profile").style.display = "none";
     document.getElementById("canvas").style.display = "none";
     document.getElementById("user-profile").style.display = "none";
