@@ -21,8 +21,8 @@ const topnav = document.createElement("div");
 topnav.setAttribute("class", "topnav");
 
 topnav.innerHTML += `         
-<a id="profile" href="#profile">Profile</a>
-<a id="gallery" href="#gallery">Gallery</a>`;
+<a class="profile" href="#profile">Profile</a>
+<a id "gallery" href="#gallery">Gallery</a>`;
 
 mainnav.appendChild(topnav);
 
