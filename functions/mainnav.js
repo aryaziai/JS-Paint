@@ -22,7 +22,7 @@ topnav.setAttribute("class", "topnav");
 
 topnav.innerHTML += `         
 <a class="active" href="#profile">Profile</a>
-<a id "gallery" href="#gallery">Gallery</a>`;
+<a id="gallery" href="#gallery">Gallery</a>`;
 
 mainnav.appendChild(topnav);
 
