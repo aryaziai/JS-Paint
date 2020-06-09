@@ -34,7 +34,6 @@
 #sign-in-button,
 #sign-up-button {
   border-radius: 31px;
-  border: 1px solid transparent;
   padding-right: 40px;
   padding-left: 40px;
   padding-top: 10px;
@@ -44,11 +43,13 @@
 #sign-in-button {
   color: #63bd00;
   background: #fff;
+  border: 1px solid #63bd00;
 }
 
 #sign-up-button {
   background: #63bd00;
   color: #fff;
+  border: 1px solid transparent;
 }
 
 #sign-in-button:hover {
@@ -58,6 +59,7 @@
 
 #sign-up-button:hover {
   background: #539f00;
+  color: #fff;
 }
 
 #additionalSignUp {
