@@ -21,7 +21,7 @@ const topnav = document.createElement("div");
 topnav.setAttribute("class", "topnav");
 
 topnav.innerHTML += `         
-<a class="active" href="#profile">Profile</a>
+<a class="active" id="profile" href="#profile">Profile</a>
 <a id="gallery" href="#gallery">Gallery</a>`;
 
 mainnav.appendChild(topnav);
@@ -55,14 +55,15 @@ function loadProfile(event) {
   }
 }
 let allDrawings = [];
-let gallery = document.querySelector(
-  "body > div.mainnav > div.topnav > a:nth-child(2)"
-);
+let gallery = document.querySelector("#gallery");
 gallery.addEventListener("click", (event) => loadGallery(event));
 function loadGallery(event) {
   if (currentUser == null) {
     console.log("not authorized");
   } else {
+    document.querySelector("#gallery").style.cssText =
+      "background:#e69700;color:#fff";
+
     document.querySelector("#music").pause();
     document.getElementById("edit-user-profile").style.display = "none";
     document.getElementById("canvas").style.display = "none";
