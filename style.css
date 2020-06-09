@@ -39,13 +39,26 @@
   padding-left: 40px;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #63bd00;
 }
 
-#sign-in-button:hover,
-#sign-up-button:hover {
+#sign-in-button {
+  color: #63bd00;
+  background: #fff;
+}
+
+#sign-up-button {
+  background: #63bd00;
+  color: #fff;
+}
+
+#sign-in-button:hover {
   color: #fff;
   background: #63bd00;
+}
+
+#sign-up-button:hover {
+  background: #fff;
+  color: #63bd00;
 }
 
 #additionalSignUp {
