@@ -36,9 +36,7 @@ if (currentUser == null) {
   login.addEventListener("click", (event) => signUserIn(event));
 }
 
-let profile = document.querySelector(
-  "body > div.mainnav > div.topnav > a.active"
-);
+let profile = document.querySelector("#profile");
 profile.addEventListener("click", (event) => loadProfile(event));
 
 function loadProfile(event) {
@@ -63,7 +61,8 @@ function loadGallery(event) {
   } else {
     document.querySelector("#gallery").style.cssText =
       "background:#e69700;color:#fff";
-
+    document.querySelector("#profile").style.cssText =
+      "background:#fff;color:#e69700";
     document.querySelector("#music").pause();
     document.getElementById("edit-user-profile").style.display = "none";
     document.getElementById("canvas").style.display = "none";
