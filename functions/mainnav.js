@@ -38,13 +38,17 @@ if (currentUser == null) {
 
 let profile = document.querySelector("#profile");
 profile.addEventListener("click", (event) => loadProfile(event));
-
 function loadProfile(event) {
-  document.querySelector("#music").pause();
   event.preventDefault();
   if (currentUser == null) {
     console.log("not authorized");
   } else {
+    document.querySelector("#music").pause();
+    document.querySelector("#profile").style.cssText =
+      "background:#e69700;color:#fff";
+    document.querySelector("#gallery").style.cssText =
+      "background:#fff;color:##222";
+
     document.getElementById("user-drawings-container").innerHTML = "";
     document.getElementById("edit-user-profile").style.display = "none";
     document.getElementById("canvas").style.display = "none";
@@ -62,7 +66,7 @@ function loadGallery(event) {
     document.querySelector("#gallery").style.cssText =
       "background:#e69700;color:#fff";
     document.querySelector("#profile").style.cssText =
-      "background:#fff;color:#e69700";
+      "background:#fff;color:##222";
     document.querySelector("#music").pause();
     document.getElementById("edit-user-profile").style.display = "none";
     document.getElementById("canvas").style.display = "none";
