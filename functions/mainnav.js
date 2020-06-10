@@ -12,6 +12,10 @@ function authorizeUser(event) {
     console.log("not authorized");
   } else {
     loadCanvas(event);
+    document.querySelector("#profile").style.cssText =
+      "background:#fff;color:#222";
+    document.querySelector("#gallery").style.cssText =
+      "background:#fff;color:##222";
   }
 }
 
