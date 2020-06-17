@@ -313,6 +313,7 @@ function saveDrawing(event) {
   if (button.getAttribute("clicked") === null) {
     button.setAttribute("clicked", "true");
   }
+  document.querySelector("#music").pause();
   let selectBar = document.getElementById("selectBar");
 
   let canvas = document.getElementById("draw");
@@ -336,7 +337,6 @@ function saveDrawing(event) {
 
       saveDrawingToUser(newDrawing);
     });
-  document.querySelector("#music").pause();
 }
 
 function saveDrawingToUser(newDrawing) {
