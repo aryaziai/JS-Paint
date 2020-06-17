@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  checkDevice();
   wheelCreator();
   dropDownListen();
   canvaDrawing();
