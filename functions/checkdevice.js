@@ -16,6 +16,6 @@ function checkDevice() {
 
   if (check) {
     document.querySelector("html").innerHTML =
-      "<h1>Sorry!</h1>JSPaint is not supported by mobile devices.<br><center><img src='assets/sorry.jpg' width='70%'></center>";
+      "<h1>Sorry!</h1>JSPaint isn't currently supported by mobile devices.<br><center><img src='assets/sorry.jpg' width='70%'></center>";
   }
 }
